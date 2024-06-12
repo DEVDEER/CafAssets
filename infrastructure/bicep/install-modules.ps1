@@ -7,24 +7,16 @@ $root = $PSScriptRoot.Contains(' ') ? '.' : $PSScriptRoot
 
 nuget install devdeer.Templates.Bicep -Source nuget.org -OutputDirectory $root
 
-# remove existing modules and components
-if (Test-Path -Path "$root/modules") {
-    Remove-Item "$root/modules" -Recurse
+$folders = @('modules', 'components', 'constants', 'functions', 'types')
+
+foreach ($folder in $folders) {
+    # remove existing modules and components
+    if (Test-Path -Path "$root/$folder") {
+        Remove-Item "$root/$folder" -Recurse
+    }
+    # move items modules and components one level up from the nuget path
+    Move-Item "$root/devdeer.Templates.Bicep*/$folder" $root -Force
 }
-if (Test-Path -Path "$root/components") {
-    Remove-Item "$root/components" -Recurse
-}
-if (Test-Path -Path "$root/types") {
-    Remove-Item "$root/types" -Recurse
-}
-if (Test-Path -Path "$root/functions") {
-    Remove-Item "$root/functions" -Recurse
-}
-# move items modules and components one level up from the nuget path
-Move-Item "$root/devdeer.Templates.Bicep*/modules" $root -Force
-Move-Item "$root/devdeer.Templates.Bicep*/components" $root -Force
-Move-Item "$root/devdeer.Templates.Bicep*/types" $root -Force
-Move-Item "$root/devdeer.Templates.Bicep*/functions" $root -Force
 Move-Item "$root/devdeer.Templates.Bicep*/assets/install-modules.ps1" $root -Force
 if (!(Test-Path -Path "$root/.gitgnore")) {
     Move-Item "$root/devdeer.Templates.Bicep*/assets/.gitignore" $root -Force
