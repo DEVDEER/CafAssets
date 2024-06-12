@@ -2,5 +2,6 @@ modules/
 components/
 types/
 functions/
+constants/
 arm-output/
 parameters.temp.json

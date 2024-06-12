@@ -4,5 +4,6 @@
   "managementResourceGroupName": "",
   "defaultActionGroupName": "",
   "defaultDiagnosticName": "",
-  "prefix": ""
+  "prefix": "",
+  "namingConventions": null
 }
