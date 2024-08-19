@@ -34,12 +34,6 @@ resource "azurerm_storage_account" "storage" {
   account_replication_type = "LRS"
 }
 
-resource "azurerm_storage_container" "state" {
-  name                  = local.containerName
-  storage_account_name  = azurerm_storage_account.management.name
-  container_access_type = "private"
-}
-
 resource "azurerm_network_watcher" "nw" {
   name                = local.networkWatcherName
   location            = azurerm_resource_group.rg.location
