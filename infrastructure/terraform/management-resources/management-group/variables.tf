@@ -9,14 +9,23 @@ variable "projectName" {
   type        = string
 }
 
+variable "companyShort" {
+  description = "The short name of the company"
+  type        = string
+}
+
 variable "location" {
   description = "Location of the Azure resources"
   type        = string
   default     = "westeurope"
 }
 
+variable "keyVaultShort" {
+  description = "The short name of the key vault resource"
+  type        = string
+  default     = "akv"
+}
+
 locals {
-  storageAccountName = "sto${var.projectName}statemanagement"
-  containerName      = "tfstate"
-  keyVaultName       = "akv-${var.projectName}-management"
+  keyVaultName       = "${var.keyVaultShort}-${var.companyShort}-mgmt-${var.projectName}"
 }
