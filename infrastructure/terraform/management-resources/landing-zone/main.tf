@@ -26,7 +26,7 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_storage_account" "storage" {
-  name                     = "stoddmgmt1${var.projectName}"
+  name                     = local.storageAccountName
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
@@ -41,7 +41,7 @@ resource "azurerm_storage_container" "state" {
 }
 
 resource "azurerm_network_watcher" "nw" {
-  name                = "nw-dd-mgmt-${var.projectName}"
+  name                = local.networkWatcherName
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 }
