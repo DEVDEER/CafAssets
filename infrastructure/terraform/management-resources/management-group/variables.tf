@@ -27,5 +27,5 @@ variable "keyVaultShort" {
 }
 
 locals {
-  keyVaultName       = "${var.keyVaultShort}-${var.companyShort}-mgmt-${var.projectName}"
+  keyVaultName = "${var.keyVaultShort}-${var.companyShort}-mgmt-${var.projectName}"
 }
