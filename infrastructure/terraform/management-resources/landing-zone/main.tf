@@ -21,16 +21,16 @@ resource "azurerm_resource_group" "rg" {
   name     = var.resourceGroupName
   location = var.location
   tags = {
-    purpose = "Demo"
+    purpose = "CAF Assets"
   }
 }
 
-# resource "azurerm_management_lock" "no-delete-lock" {
-#   name       = "nodelete"
-#   scope      = azurerm_resource_group.rg.id
-#   lock_level = "CanNotDelete"
-#   notes      = "Protects the resource group from accidental deletion."
-# }
+resource "azurerm_management_lock" "no-delete-lock" {
+  name       = "nodelete"
+  scope      = azurerm_resource_group.rg.id
+  lock_level = "CanNotDelete"
+  notes      = "Protects the resource group from accidental deletion."
+}
 
 resource "azurerm_storage_account" "storage" {
   name                     = local.storageAccountName

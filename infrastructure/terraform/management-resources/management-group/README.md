@@ -1,6 +1,6 @@
 # Management Resources
 
-The bicep templates in this folder are used to deploy the management resources that are required in every single management group. These resources include:
+The terraform templates in this folder are used to deploy the management resources that are required in every single management group. These resources include:
 
 - s subscription named `iam-management`
   - a resource group called `rg-management`
