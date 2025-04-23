@@ -4,4 +4,4 @@ using 'main.bicep'
 param location = 'West Europe'
 
 @description('The name of the project.')
-param projectName = 'Jever'
+param projectName = ''
