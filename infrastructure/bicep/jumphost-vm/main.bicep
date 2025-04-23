@@ -11,7 +11,7 @@ resource group 'Microsoft.Resources/resourceGroups@2021-01-01' = {
   location: location
 }
 
-module applyLock 'modules/Microsoft.Authorization/locks.bicep' = {
+module applyLock '../modules/Microsoft.Authorization/locks.bicep' = {
   scope: group
   name: 'applyLock'
 }
