@@ -14,7 +14,7 @@ param imageVersion string = 'latest'
 
 var options = opt.outputs.options
 
-module opt 'modules/options.bicep' = {
+module opt '../modules/options.bicep' = {
   name: 'options'
   params: {
     location: location
@@ -22,7 +22,7 @@ module opt 'modules/options.bicep' = {
   }
 }
 
-module nsg 'modules/Microsoft.Network/networkSecurityGroups.bicep' = {
+module nsg '../modules/Microsoft.Network/networkSecurityGroups.bicep' = {
   name: 'nsg'
   params: {
     options: options
@@ -45,7 +45,7 @@ module nsg 'modules/Microsoft.Network/networkSecurityGroups.bicep' = {
   }
 }
 
-module vnet 'modules/Microsoft.Network/virtualNetworks.bicep' = {
+module vnet '../modules/Microsoft.Network/virtualNetworks.bicep' = {
   name: 'vnet'
   params: {
     options: options
@@ -66,7 +66,7 @@ module pip '../modules/Microsoft.Network/publicIPAddresses.bicep' = {
   }
 }
 
-module nic 'modules/Microsoft.Network/networkInterfaces.bicep' = {
+module nic '../modules/Microsoft.Network/networkInterfaces.bicep' = {
   name: 'nic'
   params: {
     options: options
@@ -81,7 +81,7 @@ module nic 'modules/Microsoft.Network/networkInterfaces.bicep' = {
   }
 }
 
-module debugVirtualMachine 'modules/Microsoft.Compute/virtualMachines.bicep' = {
+module debugVirtualMachine '../modules/Microsoft.Compute/virtualMachines.bicep' = {
   name: 'vm'
   params: {
     options: options
