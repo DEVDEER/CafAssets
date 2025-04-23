@@ -1,0 +1,9 @@
+{
+  "managementSubscriptionId": "",
+  "logAnalyticsWorkspaceName": "",
+  "managementResourceGroupName": "",
+  "defaultActionGroupName": "",
+  "defaultDiagnosticName": "",
+  "prefix": "",
+  "namingConventions": null
+}
