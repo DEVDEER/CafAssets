@@ -1,9 +1,10 @@
 {
-  "managementSubscriptionId": "",
-  "logAnalyticsWorkspaceName": "",
-  "managementResourceGroupName": "",
-  "defaultActionGroupName": "",
-  "defaultDiagnosticName": "",
-  "prefix": "",
-  "namingConventions": null
+    "$schema": "https://raw.githubusercontent.com/DEVDEER/spock-content/refs/heads/main/static/bicepSettings.json",
+    "managementSubscriptionId": "",
+    "logAnalyticsWorkspaceName": "",
+    "managementResourceGroupName": "",
+    "defaultActionGroupName": "",
+    "defaultDiagnosticName": "",
+    "prefix": "",
+    "namingConventions": null
 }

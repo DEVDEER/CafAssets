@@ -39,7 +39,7 @@ variable "keyVaultShort" {
 }
 
 locals {
-  storageAccountName = "${var.storageAccountShort}${var.companyShort}mgmt${var.projectName}"
-  keyVaultName       = "${var.keyVaultShort}-${var.companyShort}-mgmt-${var.projectName}"
-  networkWatcherName = "${var.networkWatcherShort}-${var.companyShort}-mgmt-${var.projectName}"
+  storageAccountName = "${var.storageAccountShort}${var.companyShort}${var.projectName}mgmt"
+  keyVaultName       = "${var.keyVaultShort}-${var.companyShort}-${var.projectName}-mgmt"
+  networkWatcherName = "${var.networkWatcherShort}-${var.companyShort}-${var.projectName}-mgmt"
 }
