@@ -14,6 +14,9 @@ resource group 'Microsoft.Resources/resourceGroups@2022-09-01' = {
   location: location
   tags: {
     project: projectName
+    iam: true
+    purpose: 'Production'
+    managedBy: 'DEVDEER'
   }
 }
 
