@@ -27,6 +27,5 @@ module keyVault '../../modules/Microsoft.KeyVault/vaults.bicep' = {
     enabledForDiskEncryption: true
     enabledForTemplateDeployment: true
     enableSoftDelete: true
-    enableRbacAuthorization: true
   }
 }
