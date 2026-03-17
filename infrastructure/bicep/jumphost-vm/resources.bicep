@@ -59,6 +59,7 @@ module pip '../modules/Microsoft.Network/publicIPAddresses.bicep' = {
   name: 'pip'
   params: {
     options: options
+    skuName: 'Standard'
     additionalName: 'jumphost'
     dnsLabel: 'jumphost'
     allocationMethod: 'Static'
